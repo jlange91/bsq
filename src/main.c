@@ -6,7 +6,7 @@
 /*   By: jlange <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/06 13:17:24 by jlange            #+#    #+#             */
-/*   Updated: 2020/11/12 11:42:55 by jlange           ###   ########.fr       */
+/*   Updated: 2020/11/12 19:21:33 by jlange           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int		read_map(t_infomap *imap, int fd)
 	f_line = concat_char(NULL, 0);
 	while (read(fd, &c, 1) > 0 && c != '\n')
 		f_line = concat_char(f_line, c);
+	if (!f_line)
+		return (1);
 	if (!(ret = fill_check_info_map(imap, f_line)))
 		ret = fill_check_mat(imap, fd);
 	if (f_line)

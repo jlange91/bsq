@@ -26,8 +26,7 @@ $(LIB) :
 		@echo "\033[36mIncrease the search speed\033[0m"
 		@ranlib $(LIB)
 		@echo "\033[32mLibrary Created\033[0m"
-		@gcc -o $(EXEC) $(LIB) -fsanitize=address
-
+		@gcc -o $(EXEC) $(LIB)
 		@echo "\033[32mExecutable Created\033[0m"
 		@echo "\033[33m----------------------------------\033[0m"
 
