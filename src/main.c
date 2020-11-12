@@ -6,7 +6,7 @@
 /*   By: jlange <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/06 13:17:24 by jlange            #+#    #+#             */
-/*   Updated: 2020/11/12 11:13:57 by jlange           ###   ########.fr       */
+/*   Updated: 2020/11/12 11:42:55 by jlange           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ int		main(int ac, char **av)
 		if (read_map(&imap, 0))
 		{
 			write(1, "map error\n", 10);
+			free_mat(imap.mat, imap.c_len);
 			return (0);
 		}
 		print_map(&imap);
